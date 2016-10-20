@@ -1,0 +1,7 @@
+---
+# tasks file for serverspec_sample
+- name: distribute serverspec suite
+  copy: src=serverspec_sample dest={{ serverspec_base_path }}
+
+- name: distribute spec file
+  template: src=web_spec.rb.j2 dest={{ serverspec_path }}/spec/localhost/web_spec.rb

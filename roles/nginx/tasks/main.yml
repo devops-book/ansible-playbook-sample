@@ -1,0 +1,10 @@
+---
+# tasks file for nginx
+- name: install nginx
+  yum: name=nginx state=installed
+
+- name: replace index.html
+  template: src=index.html.j2 dest=/usr/share/nginx/html/index.html
+
+- name: nginx start
+  service: name=nginx state=started enabled=yes
